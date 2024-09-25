@@ -1,0 +1,153 @@
+.hero{
+    display: flex;
+    padding: 50px;
+    justify-content: space-between;
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #a09c9c;
+  }
+  
+  .hero-info, .carousel-container {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .hero-info {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url('https://example.com/background-image.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-info h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: slideIn 1.5s ease-out;
+  }
+  
+  .hero-info p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-out;
+  }
+  
+  .hero-info h1:hover {
+    color: #f0ad4e;
+    cursor: pointer;
+  }
+  
+  .hero-info p:hover {
+    color: #ccc;
+    transition: color 0.3s ease;
+  }
+  
+  .hero-info .btn-primary {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .hero-info .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: rgba(40, 167, 69, 0.4);
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  
+  .hero-info .btn-primary:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  .hero-info .btn-primary:hover::before {
+    opacity: 1;
+  }
+  
+  /* Carousel Styling */
+  .carousel-container {
+    padding: 0;
+    background: white;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 15px;
+    overflow: hidden; /* This ensures content does not overflow the rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .carousel .carousel-slider {
+    border-radius: 15px;
+    overflow: hidden; /* Ensures the images stay within the rounded border */
+  }
+  
+  .carousel .carousel .slide {
+    border-radius: 15px; /* Ensure each slide has rounded corners */
+  }
+  
+  .carousel .carousel .control-dots .dot {
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+  }
+  
+  .carousel .control-dots .dot:hover {
+    background: #ccc;
+  }
+  
+  /* Animations */
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+.hero-info{
+    width: 50%;
+    margin-right: 20px;
+    height: 400px;
+}
+.carousel-container{
+    width: 50%;
+    margin-left: 20px;
+}

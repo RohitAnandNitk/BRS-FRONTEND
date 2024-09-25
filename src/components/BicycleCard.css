@@ -1,0 +1,35 @@
+.card{
+     flex-wrap: wrap;
+     border :2px solid black ;
+     width : 250px; 
+     padding :5px 5px ;
+     background-color: #fff;
+     margin :25px;
+    
+}
+
+.card img{
+    width : 250px;
+    height: 200px;
+}
+
+
+.info{ 
+    text-align: center;
+}
+
+.booknow {
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #353636;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+  }
+  
+  .booknow:hover {
+    background-color: #000000;
+  }

@@ -1,0 +1,6 @@
+.bipage{
+    background-color: rgb(161, 158, 158);
+    display: flex row;
+   justify-content: center;
+   align-items: center ;
+}

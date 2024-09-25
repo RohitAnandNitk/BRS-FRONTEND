@@ -1,0 +1,29 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    align-items: center; 
+    padding: 5px;
+}
+
+.listItem ul{
+    display: flex;
+}
+
+.listItem ul li{
+    list-style:none ;
+    padding: 0 20px; 
+    font-size: 15px;
+}
+
+.link{
+  text-decoration: none;
+  color: white;
+}
+
+.link:hover{
+    color: rgb(172, 168, 168);
+}
+
+  
