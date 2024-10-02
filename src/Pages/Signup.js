@@ -107,6 +107,7 @@ const Signup = () => {
         <h2>Register</h2>
         <h2 style={{color:'green', fontSize:'20px'}}>{ sucess ? <p><img src = "https://w7.pngwing.com/pngs/688/951/png-transparent-correct-mark-tick-icon-thumbnail.png" style={{height:'20px', marginRight:'8px'}}/>{user.name}  You have Registered Sucessffuly.</p> : ""}</h2>
         <label>Name:</label>
+        <span style={{color:'red'}}>{error.name}</span>
         <input
           type="text"
            required
@@ -115,8 +116,8 @@ const Signup = () => {
           name = "name"
           autoComplete='off'
         />
-        <span style={{color:'red'}}>{error.name}</span>
         <label>Roll Number:</label>
+        <span style={{color:'red'}}>{error.rollno}</span>
         <input
           type="text"
           required
@@ -124,8 +125,8 @@ const Signup = () => {
           value ={user.rollno}
           name = "rollno"
         />
-         <span style={{color:'red'}}>{error.rollno}</span>
         <label>Registration Number:</label>
+        <span style={{color:'red'}}>{error.regno}</span>
         <input
           type="text"
           required
@@ -133,8 +134,8 @@ const Signup = () => {
           value ={user.regno}
           name = "regno"
         />
-         <span style={{color:'red'}}>{error.regno}</span>
         <label>Programme:</label>
+        <span style={{color:'red'}}>{error.prog}</span>
         <input
           type="text"
           required
@@ -142,8 +143,8 @@ const Signup = () => {
           value ={user.prog}
           name = "prog"
         />
-         <span style={{color:'red'}}>{error.prog}</span>
         <label>Mobile Number:</label>
+        <span style={{color:'red'}}>{error.mob}</span>
         <input
           type="tel"
           required
@@ -151,8 +152,8 @@ const Signup = () => {
           value ={user.mob}
           name = "mob"
         />
-         <span style={{color:'red'}}>{error.mob}</span>
         <label>Email:</label>
+        <span style={{color:'red'}}>{error.email}</span>
         <input
           type="email"
           required
@@ -160,8 +161,8 @@ const Signup = () => {
           value ={user.email}
           name = "email"
         />
-         <span style={{color:'red'}}>{error.email}</span>
         <label>Password:</label>
+        <span style={{color:'red'}}>{error.pass}</span>
         <input
           type="password"
           required
@@ -169,8 +170,8 @@ const Signup = () => {
           value ={user.pass}
           name = "pass"
         />
-         <span style={{color:'red'}}>{error.pass}</span>
         <label>Confirm Password:</label>
+        <span style={{color:'red'}}>{error.conpass}</span>
         <input
           type="password"
           required
@@ -178,7 +179,6 @@ const Signup = () => {
           value ={user.conpass}
           name = "conpass"
         />
-         <span style={{color:'red'}}>{error.conpass}</span>
         <button type="submit"  onClick ={handleSubmit} >Register</button>
       </form>
    
