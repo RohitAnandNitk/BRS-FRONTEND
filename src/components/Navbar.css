@@ -12,9 +12,11 @@
 }
 
 .listItem ul li{
-    list-style:none ;
-    padding: 0 20px; 
-    font-size: 15px;
+    list-style:none;
+    padding-top:20px;
+    padding-right:30px; 
+    padding-bottom:20px; 
+    font-size: 20px;
 }
 
 .link{
@@ -25,5 +27,21 @@
 .link:hover{
     color: rgb(172, 168, 168);
 }
+
+.logout-button {
+ text-decoration: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  background: #000;
+}
+
+.logout-button:hover{
+    background-color: black;
+    color: rgb(172, 168, 168);
+}
+
+
 
   

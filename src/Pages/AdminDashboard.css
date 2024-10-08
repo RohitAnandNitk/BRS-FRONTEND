@@ -1,0 +1,145 @@
+ /* body {
+    font-family: Arial, sans-serif;
+    /* margin: 0; */
+    /* padding: 0; */
+    /* height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}  */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 2px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 800px; /* Container width */
+    margin: 3rem;
+    margin-left: 16rem;
+    height: 55vh; 
+}
+
+.containerd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+   
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 800px; /* Container width */
+    margin: 2rem;
+    margin-left: 16rem;
+    height: 50vh; 
+}
+
+.header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.header h1 {
+    margin: 1rem;
+    font-size: 28px;
+}
+
+.admin-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.left-div {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    padding : 1px;
+}   
+
+.left-div img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #555;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.right-div {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* .right-div h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+} */
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+
+}
+
+.info p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.info strong {
+    display: inline-block;
+    width: 120px;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+   
+}
+
+.heading2{
+    padding: 1rem;
+    text-align: center;
+}
+
+.admin-btn {
+    padding: 10px 20px;
+    background-color:  black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.admin-btn:hover{
+    background-color: #000000;
+}
+
+.change-password {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #1f2020;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 2rem;
+}
+.change-password {
+    background-color: #000000;
+}
+

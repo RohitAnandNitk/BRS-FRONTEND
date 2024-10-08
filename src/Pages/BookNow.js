@@ -8,4 +8,4 @@ function BookNow() {
   )
 }
 
-export default BookNow
+export default BookNow;
