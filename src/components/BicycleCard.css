@@ -1,11 +1,11 @@
 .card{
      flex-wrap: wrap;
-     border :2px solid black ;
+     /* border :2px solid black ; */
      width : 250px; 
      padding :5px 5px ;
      background-color: #fff;
      margin :25px;
-    
+     box-shadow: 8px 10px #807e7e;
 }
 
 .card img{
@@ -15,8 +15,15 @@
 
 
 .info{ 
+  align-items: center;
     text-align: center;
+     font-weight:bold;
 }
+
+.link{
+  text-decoration: none;
+}
+
 
 .booknow {
     padding: 0.75rem;
@@ -27,9 +34,48 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 250px;
+    width: 230px;
   }
   
   .booknow:hover {
     background-color: #000000;
   }
+
+  .filter-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .filter-options div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+  }
+  
+  .filter-options label {
+    margin-bottom: 5px;
+  }
+  
+  .filter-options input, .filter-options select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .filter-btn {
+    padding: 10px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }
+  
+  .bipage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  

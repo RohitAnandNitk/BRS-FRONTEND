@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './AdminDashboard.css'; // Assuming you have a separate CSS file for styling
-import { Link } from 'react-router-dom';
+import { Link  , useNavigate} from 'react-router-dom';
 
 const AdminDashboard = () => {
 
- 
+   const navigate = useNavigate();
+   
   const [admin, setadmin] = useState(null); // State to store admin info
 
-  useEffect(() => {
+    useEffect(() => {
     fetch('http://localhost:4000/admin/profile', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`, // Send token in the headers
@@ -15,7 +16,9 @@ const AdminDashboard = () => {
     })
       .then( (response) => {
         if (!response.ok) {
-          console.log("token has been expired");
+          alert("Session has been expired!");
+          alert("Please Login Again");
+          handleLogout();
           throw new Error('Failed to fetch admin data');
         }
         return response.json();
@@ -33,6 +36,12 @@ const AdminDashboard = () => {
 
    console.log(admin);
 
+   //when token expired then Logout and redirect to login
+   const handleLogout = () => {
+    localStorage.removeItem('token');  // Remove token from storage
+    navigate('/login');  // Redirect to login page
+  };
+  
   return (
     <>
          <div className="container">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './BicycleList.css';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const BicycleList = () => {
   const [bicycles, setBicycles] = useState([]);
@@ -60,7 +60,7 @@ const BicycleList = () => {
   };
 
   return (
-    <div>
+    <div className='bicycle-list'>
       <h2>Bicycle List</h2>
       <table>
         <thead>

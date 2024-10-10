@@ -1,18 +1,21 @@
 import React from 'react'
 import './BicycleCard.css'
-import BookNow from '../Pages/BookNow'
+import { Link } from 'react-router-dom'
 
-const BicycleCard = ({location,rent,avai,pic}) => {
 
+
+const BicycleCard = ({id, type , location ,rent ,status ,pic}) => {
   return (
     <div className='card'>
            <img src = {pic} alt ="bicycle img" />
            <div  className='info' > 
+                
+                <p> Type : {type}</p>
                 <p> Location : {location}</p>
                 <p>Rent : ₹{rent}</p>
-                <p>Availability : {avai}</p>
+                <p>Availability : {status}</p>
            </div>
-            <button className='booknow'   to = './BookNow'> Book Now</button>
+            <Link className='link'  to = {`/book-now/${id}`}><button className='booknow'> Book Now</button></Link>
         </div>
   )
 }

@@ -1,10 +1,11 @@
 
 
 
-.btn{
+.filter-btn{
+    box-shadow: 3px 2px #807e7e;
     background: #a7a2a2;
     color: white;
-    width: 100px;
+    width: 200px;
     border: 1px #615d5d solid;
     border-radius: 15px;
     padding: 10px;
@@ -12,6 +13,6 @@
     box-shadow: inset black;
 }
 
-.btn:hover{
+.filter-btn:hover{
     background-color: rgb(94, 92, 92);
 }

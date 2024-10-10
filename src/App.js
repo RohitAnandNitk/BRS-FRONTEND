@@ -15,6 +15,9 @@ import ChangePassword from './Pages/ChangePassword';
 import BicycleList from './Pages/BicycleList';
 import AddBicycle from './Pages/AddBicycle';
 import UpdateBicycle from './Pages/UpdateBicycle';
+import BookNow from './Pages/BookNow';
+import BookingHistory from './Pages/BookingHistory';
+import ReturnBicycle from './Pages/ReturnBicycle';
 
 // React router dom for routes command for terminal : nmp i react-router-dom
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -29,7 +32,7 @@ const App = () => {
         <Route path="/UserProfile" element={<UserProfile />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
-
+         
         {/* inside login page */}
         <Route path ='/book-bicycle' element={<BookBicyle />} /> 
         <Route path ='/admin-dashboard' element={<AdminDashboard />} />
@@ -49,6 +52,15 @@ const App = () => {
         <Route path="/bicycles/update/:id" element={<UpdateBicycle />} />
         {/* delete bicycle  */}
         <Route path = "/delete-cycle" element={<BicycleList></BicycleList>}></Route>
+        
+        {/* book bicycle page */}
+        <Route path ='/book-now/:id' element = {<BookNow></BookNow>}></Route>
+
+        {/* booking history */}
+        <Route path="/history" element={<BookingHistory></BookingHistory>}></Route>
+        
+        {/* return bicycle */}
+        <Route path="/return-bicycle/:bookingId" element={<ReturnBicycle></ReturnBicycle>}></Route>
 
       </Routes>
       <Footer />

@@ -28,7 +28,7 @@ const Navbar = () => {
       </div>
       <div className='listItem'>
         <ul>
-          <li><Link to="/" className='link'>Home</Link></li>
+          <li><Link to="/"  className='link'>Home</Link></li>
 
           {/* Conditionally render links based on user's login and role */}
           {token ? (

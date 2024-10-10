@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import './AddBicycle.css';
+import {useNavigate } from 'react-router-dom';
+
 
 const AddBicycle = () => {
+  const navigate = useNavigate(); // For navigating after successful update
+  // sucessful submit
+  const [sucess, showMess] = useState(false);
+
   const [bicycle, setBicycle] = useState({
     model: '',
     location: '',
@@ -19,7 +25,7 @@ const AddBicycle = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/bicycles', {
+      const response = await fetch('http://localhost:4000/bicycle/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,7 +34,10 @@ const AddBicycle = () => {
       });
 
       if (response.ok) {
-        alert('Bicycle added successfully!');
+        showMess(true);
+          setTimeout(() =>{
+              navigate('/update-cycle'); // Navigate back to the bicycles list
+          }, 2000 );
         // Reset form
         setBicycle({
           model: '',
@@ -50,6 +59,7 @@ const AddBicycle = () => {
   return (
     <div className="add-bicycle">
       <h2>Add New Bicycle</h2>
+      <h2 style={{color:'green', fontSize:'20px'}}>{ sucess ? <p><img src = "https://w7.pngwing.com/pngs/688/951/png-transparent-correct-mark-tick-icon-thumbnail.png" alt='valid sign pic' style={{height:'20px', marginRight:'8px'}}/> Bicycle Added Sucessffuly.</p> : ""}</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Model:</label>

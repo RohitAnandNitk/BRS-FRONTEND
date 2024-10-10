@@ -1,7 +1,7 @@
 /* BicycleList.css */
 
 .bicycle-list {
-    width: 80%;
+    width: 800px;
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -17,7 +17,7 @@
   
   table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse;  
   }
   
   th, td {
