@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './AddBicycle.css';
 import {useNavigate } from 'react-router-dom';
 
+const BaseURL = "http://localhost:4000";
 
 const AddBicycle = () => {
   const navigate = useNavigate(); // For navigating after successful update
@@ -25,7 +26,7 @@ const AddBicycle = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:4000/bicycle/add', {
+      const response = await fetch(`${BaseURL}/bicycle/add`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

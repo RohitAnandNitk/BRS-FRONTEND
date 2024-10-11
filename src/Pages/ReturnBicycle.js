@@ -1,62 +1,92 @@
-// ReturnBicycle.js
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import './ReturnBicycle.css';
+
+const BaseURL = "http://localhost:4000";
+
 
 const ReturnBicycle = () => {
-  const { bookingId } = useParams(); // Extract booking ID from URL
+  const { bookingId } = useParams(); // Extract bookingId from URL params
+  const [bicycleId, setBicycleId] = useState(null);
   const [returnLocation, setReturnLocation] = useState('');
-  const [locations, setLocations] = useState([]);
+  const [locations, setLocations] = useState([]); // You can populate locations from your location manager
+  const [validLocations, setValidLocations] = useState([]);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    // Fetch available return locations
+ 
+   // Fetch valid locations from the backend when the component mounts
+   useEffect(() => {
     const fetchLocations = async () => {
-      const response = await fetch('http://localhost:4000/locations/valid-locations');
+      console.log("enter the fetch location function");
+      const response = await fetch(`${BaseURL}/locations`);
       const data = await response.json();
-      setLocations(data);
-      console.log(data);
+      console.log(" location Data : " , data);
+      setValidLocations(data); // Set the locations in the state
     };
     fetchLocations();
   }, []);
 
-  const handleReturn = async () => {
-    const token = localStorage.getItem('token');
-    console.log("token for returning bucycle : ", token);
+  // Fetch the booking details using bookingId
+  useEffect(() => {
+    const fetchBooking = async () => {
+      const token = localStorage.getItem('token'); // Get token from localStorage
 
-    const response = await fetch('http://localhost:4000/booking/return', {
-      method: 'POST',
+      const response = await fetch(`${BaseURL}/booking/${bookingId}`, {
+        headers: {
+          'Authorization': `Bearer ${token}` // Pass token in headers
+        }
+      });
+
+      if (response.ok) {
+        const booking = await response.json();
+        setBicycleId(booking.bicycleId._id); // Extract and set bicycleId
+      } else {
+        console.error('Failed to fetch booking details');
+      }
+    };
+
+    fetchBooking();
+  }, [bookingId]);
+
+  const handleReturn = async () => {
+    const token = localStorage.getItem('token'); // Get token from localStorage
+
+    const response = await fetch(`${BaseURL}/booking/return` , {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify({
-        bookingId,
-        returnLocation
+        bicycleId,         // The bicycleId extracted from the booking
+        returnLocation     // The return location selected by the user
       })
+      
     });
-
+    
+    const data = await response.json();
     if (response.ok) {
-      alert('Bicycle returned successfully!');
-      navigate('/history'); // Redirect to BookingHistory page
+      console.log('Bicycle returned successfully:', data);
+      navigate('/booking-history'); // Redirect to booking history page after successful return
     } else {
-      alert('Failed to return the bicycle');
+      console.error('Error returning bicycle:', data);
     }
   };
 
+
   return (
-    <div>
-      <h2>Return Bicycle</h2>
+    <div className='container'>
+      <h2 className='h2'>Return Bicycle</h2>
       <div>
-        <label>Return Location:</label>
-        <select value={returnLocation} onChange={(e) => setReturnLocation(e.target.value)}>
-          {locations.map((location, index) => (
-            <option key={index} value={location}>
-              {location}
+        <label className='label'>Choose Return Location:</label>
+        <select className='select' value={returnLocation} onChange={(e) => setReturnLocation(e.target.value)}>
+          {validLocations.map((location, index) => (
+            <option key={location._id} value={location.name}>
+              {location.name}
             </option>
           ))}
         </select>
       </div>
-      <button onClick={handleReturn}>Confirm Return</button>
+      <button className='btn' onClick={handleReturn}>Confirm Return</button>
     </div>
   );
 };

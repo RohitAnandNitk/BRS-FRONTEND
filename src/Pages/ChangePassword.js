@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './ChangePassword.css'; // Create a CSS file for styling if needed
 import {Link, useNavigate } from 'react-router-dom';
 
+const BaseURL = "http://localhost:4000";
+
+
 const ChangePassword = () => {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -23,7 +26,7 @@ const ChangePassword = () => {
     const role = localStorage.getItem('role'); // Get role from local storage
     // Make the API call to change the password
     try {
-      const path  = role === 'admin' ? 'http://localhost:4000/admin/profile/password' : 'http://localhost:4000/user/profile/password'
+      const path  = role === 'admin' ? `${BaseURL}/admin/profile/password` : `${BaseURL}/user/profile/password`
       const response = await fetch(path, {
         method: 'PUT',
         headers: {

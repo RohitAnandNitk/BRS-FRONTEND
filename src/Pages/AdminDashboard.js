@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './AdminDashboard.css'; // Assuming you have a separate CSS file for styling
 import { Link  , useNavigate} from 'react-router-dom';
 
+const BaseURL = "http://localhost:4000";
+
+
 const AdminDashboard = () => {
 
    const navigate = useNavigate();
@@ -9,7 +12,7 @@ const AdminDashboard = () => {
   const [admin, setadmin] = useState(null); // State to store admin info
 
     useEffect(() => {
-    fetch('http://localhost:4000/admin/profile', {
+    fetch(`${BaseURL}/admin/profile`, { 
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`, // Send token in the headers
       },
@@ -27,7 +30,7 @@ const AdminDashboard = () => {
         setadmin(data); // Correct function to set admin data
       })
       .catch((err) => console.error(err));
-  }, []);
+  });
   
 
   if (!admin) {

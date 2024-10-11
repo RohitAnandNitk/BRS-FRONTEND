@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
-
-
+// crreate a base url 
+const BaseURL = "http://localhost:4000";
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -24,7 +24,7 @@ function Login() {
       const selectedUserRole = document.getElementById("user").value;
       console.log(selectedUserRole);
 
-      const path = selectedUserRole === 'admin' ? 'http://localhost:4000/admin/login' : 'http://localhost:4000/user/login';
+      const path = selectedUserRole === 'admin' ? `${BaseURL}/admin/login` : `${BaseURL}/user/login`;
      
       const response = await fetch( path , {
         method: 'POST',

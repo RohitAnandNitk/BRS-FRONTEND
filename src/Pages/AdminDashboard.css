@@ -131,7 +131,7 @@
 .change-password {
     text-decoration: none;
     padding: 10px 20px;
-    background-color: #1f2020;
+    background-color: #434646;
     color: white;
     border: none;
     border-radius: 5px;
@@ -139,7 +139,7 @@
     font-size: 16px;
     margin: 2rem;
 }
-.change-password {
+.change-password:hover {
     background-color: #000000;
 }
 

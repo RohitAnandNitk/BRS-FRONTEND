@@ -61,6 +61,9 @@ const App = () => {
         
         {/* return bicycle */}
         <Route path="/return-bicycle/:bookingId" element={<ReturnBicycle></ReturnBicycle>}></Route>
+        
+        {/* for see the bookin history */}
+        <Route path="/booking-history" element = {<BookingHistory></BookingHistory>} ></Route>
 
       </Routes>
       <Footer />

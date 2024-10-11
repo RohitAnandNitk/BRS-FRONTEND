@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import './Signup.css'
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
+const BaseURL = "http://localhost:4000";
+
+
 const Signup = () => {
 // here we can create useState for each input field insted we can create in one useState.
   const [user , setUser] = useState({
@@ -97,7 +100,8 @@ const Signup = () => {
       // connection for frontend and backend
       const selectedUserRole = document.getElementById("user").value;
 
-      const path = selectedUserRole === 'admin' ? 'http://localhost:4000/admin/signup' : 'http://localhost:4000/user/signup' ;
+      
+      const path = selectedUserRole === 'admin' ? `${BaseURL}/admin/signup` : `${BaseURL}/user/signup` ;
         try{
           const response = await fetch( path , { 
             method: "POST",

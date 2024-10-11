@@ -3,6 +3,9 @@ import BicycleCard from '../components/BicycleCard';
 import by1 from "../Assets/b1.jpeg";
 import './BookBicycle.css';
 
+
+const BaseURL = "http://localhost:4000";
+
 const BookBicyle = () => {
   const [bicycles, setBicycles] = useState([]);
   const [filteredBicycles, setFilteredBicycles] = useState([]);
@@ -17,7 +20,8 @@ const BookBicyle = () => {
     // Fetch bicycles from the backend
     const fetchBicycles = async () => {
       try {
-        const response = await fetch('http://localhost:4000/bicycle', {
+        const response = await fetch(`${BaseURL}/bicycle`, { //'http://localhost:4000/bicycle'
+
           method: 'GET',
           headers: {
             'Content-Type': 'application/json'

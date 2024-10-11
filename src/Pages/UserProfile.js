@@ -3,11 +3,15 @@ import './UserProfile.css';
 import { Link } from 'react-router-dom';
 
 
+const BaseURL = "http://localhost:4000";
+
+
+
 const UserProfile = () => {
   const [user, setUser] = useState(null); // State to store user info
 
   useEffect(() => {
-    fetch('http://localhost:4000/user/profile', {
+    fetch(`${BaseURL}/user/profile`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`, // Send token in the headers
       },
@@ -61,19 +65,10 @@ const UserProfile = () => {
 
       {/* Bottom div for history of rented bicycles */}
       <div className="history-section">
-        <h2>Rental History</h2>
-        <ul className="bike-history">
-          {user.rentalHistory && user.rentalHistory.length > 0 ? (
-            user.rentalHistory.map((history, index) => (
-              <li key={index}>
-                Bicycle Model: {history.model} | Rented on: {history.rentedOn} | Returned on: {history.returnedOn}
-              </li>
-            ))
-          ) : (
-            <li>No rental history available.</li>
-          )}
-        </ul>
-      </div>
+         <h2>See Your Booking History</h2>
+        <Link to = "/booking-history" ><button > Click Here </button></Link>
+             
+       </div>
 
       {/* Back to Home link */}
       <div className="back-link">

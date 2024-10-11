@@ -3,6 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './BookNow.css';
 
 
+const BaseURL = "http://localhost:4000";
+
+
 const BookNow = () => {
   const { id } = useParams(); // Extract the bicycle ID from the URL
   console.log("bicycle id :", id);
@@ -21,7 +24,7 @@ const BookNow = () => {
   useEffect(() => {
     const fetchBicycle = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/bicycle/${id}`);
+        const response = await fetch(`${BaseURL}/bicycle/${id}`); // 
         const data = await response.json();
         setBicycle(data); // Set the fetched bicycle details
 
@@ -42,7 +45,7 @@ const BookNow = () => {
     console.log("token:", token);
     
     try {
-      const response = await fetch('http://localhost:4000/booking/book', {
+      const response = await fetch(`${BaseURL}/booking/book`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

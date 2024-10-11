@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './BicycleList.css';
 import { useNavigate } from 'react-router-dom';
 
+
+const BaseURL = "http://localhost:4000";
+
+
 const BicycleList = () => {
   const [bicycles, setBicycles] = useState([]);
   const navigate = useNavigate(); // For navigating after successful update
@@ -10,7 +14,7 @@ const BicycleList = () => {
     // Fetch bicycles from the backend
     const fetchBicycles = async () => {
       try {
-        const response = await fetch('http://localhost:4000/bicycle', {
+        const response = await fetch(`${BaseURL}/bicycle`, { // 
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -35,7 +39,7 @@ const BicycleList = () => {
   const handleDelete = async (bicycleId) => {
     // Call API to delete bicycle
     try {
-      const response = await fetch(`http://localhost:4000/bicycle/${bicycleId}`, {
+      const response = await fetch(`${BaseURL}/bicycle/${bicycleId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}` // Include token if needed

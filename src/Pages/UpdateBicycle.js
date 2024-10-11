@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './UpdateBicycle.css';
 
+const BaseURL = "http://localhost:4000";
+
+
 const UpdateBicycle = () => {
   const { id } = useParams(); // Extract the bicycle ID from the URL
   const navigate = useNavigate(); // For navigating after successful update
@@ -22,7 +25,7 @@ const UpdateBicycle = () => {
 
   // Fetch bicycle details when the component mounts
   useEffect(() => {
-    fetch(`http://localhost:4000/bicycle/${id}`) // Use the extracted id to fetch the bicycle
+    fetch(`${BaseURL}/bicycle/${id}`) // Use the extracted id to fetch the bicycle
       .then((response) => response.json())
       .then((data) => {
         setBicycle({
@@ -46,7 +49,7 @@ const UpdateBicycle = () => {
     e.preventDefault();
 
     // Update the bicycle with a PUT request
-    fetch(`http://localhost:4000/bicycle/${id}`, {
+    fetch(`${BaseURL}/bicycle/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

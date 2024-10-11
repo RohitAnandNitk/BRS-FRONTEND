@@ -89,20 +89,7 @@
 .history-section h2 {
     margin: 1rem;
     padding-bottom: 10px;
-}
-
-.bike-history {
-    list-style: none;
-    padding: 0;
-}
-
-.bike-history li {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.bike-history li:last-child {
-    border-bottom: none;
+    
 }
 
 .change-password-btn {
@@ -135,4 +122,18 @@
 
 .back-link a:hover {
     text-decoration: none;
+}
+
+
+
+
+.booking-history{
+   text-decoration: none;
+   text-align: center;
+  padding: 5rem;
+
+}
+
+.booking-history:hover{
+    color: black;
 }
