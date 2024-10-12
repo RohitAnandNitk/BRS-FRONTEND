@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link,  useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './ReturnBicycle.css';
 
 const BaseURL = "https://brs-backend-2rfc.onrender.com";
@@ -9,7 +9,7 @@ const ReturnBicycle = () => {
   const { bookingId } = useParams(); // Extract bookingId from URL params
   const [bicycleId, setBicycleId] = useState(null);
   const [returnLocation, setReturnLocation] = useState('');
-  const [locations, setLocations] = useState([]); // You can populate locations from your location manager
+  // const [locations, setLocations] = useState([]); // You can populate locations from your location manager
   const [validLocations, setValidLocations] = useState([]);
 
   // sucessful submit

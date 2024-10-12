@@ -1,11 +1,11 @@
-/* registration.css */
+
 .register-container {
     display: flex ;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
+
  
-    background-color:  a7a2a2; /* Light background */
+    background-color:  a7a2a2; 
   }
   
   .register-form {

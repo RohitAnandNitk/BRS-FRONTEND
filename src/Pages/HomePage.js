@@ -6,7 +6,7 @@ import HeroSection from './HeroSection';
 
 function HomePage() {
   return (
-    <div className='HomePage'>
+    <div className ='HomePage'>
        <HeroSection></HeroSection>
        <BookBicyle></BookBicyle>
     </div>

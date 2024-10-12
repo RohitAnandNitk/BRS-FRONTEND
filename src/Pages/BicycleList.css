@@ -1,4 +1,4 @@
-/* BicycleList.css */
+
 
 .bicycle-list {
     width: 800px;
@@ -50,10 +50,10 @@
   }
   
   button:nth-child(1) {
-    background-color: #f44336; /* Red for Delete */
+    background-color: #f44336;
   }
   
   button:nth-child(2) {
-    background-color: #008CBA; /* Blue for Update */
+    background-color: #008CBA;
   }
   

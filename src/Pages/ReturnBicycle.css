@@ -1,4 +1,4 @@
-Styling for the container */
+
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -9,7 +9,7 @@ Styling for the container */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* Styling for the heading */
+ 
   .h2 {
     text-align: center;
     font-size: 24px;
@@ -17,7 +17,7 @@ Styling for the container */
     margin-bottom: 20px;
   }
   
-  /* Styling for the label */
+
   .label {
     font-size: 16px;
     color: #292727;
@@ -25,7 +25,7 @@ Styling for the container */
     margin-bottom: 8px;
   }
   
-  /* Styling for the select dropdown */
+
   .select {
     width: 100%;
     padding: 10px;
@@ -37,7 +37,7 @@ Styling for the container */
     color: #333;
   }
   
-  /* Styling for the button */
+
  .btn {
     display: block;
     width: 80%;
@@ -52,12 +52,12 @@ Styling for the container */
     transition: background-color 0.3s ease;
   }
   
-  /* Hover effect for the button */
+
   .btn:hover {
     background-color: #070707;
   }
   
-  /* Additional responsive styling */
+
   @media (max-width: 768px) {
     .container {
       padding: 15px;
