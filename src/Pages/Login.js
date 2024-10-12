@@ -3,7 +3,7 @@ import './Login.css';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 // crreate a base url 
-const BaseURL = "http://localhost:4000";
+const BaseURL = "https://brs-backend-2rfc.onrender.com";
 
 function Login() {
   const [email, setEmail] = useState('');

@@ -3,7 +3,7 @@ import './BicycleList.css';
 import { useNavigate } from 'react-router-dom';
 
 
-const BaseURL = "http://localhost:4000";
+const BaseURL = "https://brs-backend-2rfc.onrender.com";
 
 
 const BicycleList = () => {

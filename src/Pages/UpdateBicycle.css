@@ -1,4 +1,4 @@
-/* General container styling */
+
 .update-bicycle-container {
     max-width: 500px;
     margin: 0 auto;
@@ -9,14 +9,14 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* Heading style */
+
   .update-bicycle-container h2 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
   }
   
-  /* Label style */
+
   .update-bicycle-container label {
     display: block;
     margin-bottom: 10px;
@@ -24,7 +24,7 @@
     font-weight: bold;
   }
   
-  /* Input field style */
+
   .update-bicycle-container input,
   .update-bicycle-container select,
   .update-bicycle-container textarea {
@@ -37,13 +37,13 @@
     box-sizing: border-box;
   }
   
-  /* Textarea field */
+
   .update-bicycle-container textarea {
     resize: vertical;
     min-height: 100px;
   }
   
-  /* Button styling */
+  
   .update-bicycle-container button {
     width: 100%;
     padding: 12px;
@@ -57,12 +57,12 @@
     transition: background-color 0.3s ease;
   }
   
-  /* Button hover effect */
+ 
   .update-bicycle-container button:hover {
     background-color: #45a049;
   }
   
-  /* Error message styling */
+
   .update-bicycle-container .error {
     color: red;
     margin-bottom: 20px;
@@ -70,7 +70,7 @@
     font-size: 14px;
   }
   
-  /* Loading message */
+
   .update-bicycle-container .loading {
     text-align: center;
     font-size: 18px;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './AddBicycle.css';
 import {useNavigate } from 'react-router-dom';
 
-const BaseURL = "http://localhost:4000";
+const BaseURL = "https://brs-backend-2rfc.onrender.com";
 
 const AddBicycle = () => {
   const navigate = useNavigate(); // For navigating after successful update

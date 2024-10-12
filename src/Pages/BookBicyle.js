@@ -4,7 +4,7 @@ import by1 from "../Assets/b1.jpeg";
 import './BookBicycle.css';
 
 
-const BaseURL = "http://localhost:4000";
+const BaseURL = "https://brs-backend-2rfc.onrender.com";
 
 const BookBicyle = () => {
   const [bicycles, setBicycles] = useState([]);

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './BookNow.css';
 
 
-const BaseURL = "http://localhost:4000";
+const BaseURL = "https://brs-backend-2rfc.onrender.com";
 
 
 const BookNow = () => {
@@ -11,7 +11,7 @@ const BookNow = () => {
   console.log("bicycle id :", id);
 
   const navigate = useNavigate(); // To redirect the user after booking
-
+ 
   const [bookingDetails, setBookingDetails] = useState({
     bookingDate: '',
     returnDate: '',
@@ -19,6 +19,9 @@ const BookNow = () => {
   });
 
   const [bicycle, setBicycle] = useState(null); // Store bicycle details
+  
+   // sucessful submit
+   const [sucess, showMess] = useState(false);
 
   // Fetch the bicycle details
   useEffect(() => {
@@ -60,8 +63,12 @@ const BookNow = () => {
       });
   
       if (response.ok) {
-        alert('Booking successful!');
-        navigate('/history'); // Redirect to the booking history page after booking
+       // alert('Booking successful!');
+        showMess(true);
+        setTimeout(() =>{
+          navigate('/history'); // Redirect to the booking history page after booking
+        }, 2000 ); 
+
       } else {
         console.error('Failed to book the bicycle');
       }
@@ -84,6 +91,7 @@ const BookNow = () => {
     {bicycle ? (
       <div className="bicycle-details">
         <h2 className="bicycle-title">Book Bicycle: {bicycle.type}</h2>
+        <h2 style={{color:'green', fontSize:'20px'}}>{ sucess ? <p><img src = "https://w7.pngwing.com/pngs/688/951/png-transparent-correct-mark-tick-icon-thumbnail.png" alt='valid sign pic' style={{height:'20px', marginRight:'8px'}}/> You have Booked  Sucessffuly.</p> : ""}</h2>
         <p className="bicycle-location">Location: {bicycle.location}</p>
         <p className="bicycle-rent">Rent per day: ₹{bicycle.rent}</p>
   

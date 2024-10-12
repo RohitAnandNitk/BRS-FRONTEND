@@ -3,7 +3,7 @@ import './UserProfile.css';
 import { Link } from 'react-router-dom';
 
 
-const BaseURL = "http://localhost:4000";
+const BaseURL = "https://brs-backend-2rfc.onrender.com";
 
 
 
@@ -72,7 +72,7 @@ const UserProfile = () => {
 
       {/* Back to Home link */}
       <div className="back-link">
-        <a href="/">Back to Home</a>
+        <Link to="/">Back to Home</Link>
       </div>
     </>
   );

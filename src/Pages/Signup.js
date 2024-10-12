@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Signup.css'
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
-const BaseURL = "http://localhost:4000";
+const BaseURL = "https://brs-backend-2rfc.onrender.com";
 
 
 const Signup = () => {

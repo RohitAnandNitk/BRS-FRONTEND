@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link ,  useNavigate } from 'react-router-dom';
 import './BookingHistory.css';
 
-const BaseURL = "http://localhost:4000";
+const BaseURL = "https://brs-backend-2rfc.onrender.com";
 
 const BookingHistory = () => {
   const [bookings, setBookings] = useState([]);
@@ -11,6 +11,7 @@ const BookingHistory = () => {
   useEffect(() => {
     const fetchBookings = async () => {
       const token = localStorage.getItem('token');
+      
       console.log("token" ,token);
 
       const response = await fetch( `${BaseURL}/booking` , { // 'http://localhost:4000/booking'
@@ -19,7 +20,12 @@ const BookingHistory = () => {
         }
       });
       const data = await response.json();
-      setBookings(data);
+
+      if (response.status === 404) {
+        setBookings([]);
+      } else {
+        setBookings(data);
+      }
 
       console.log(data);
     };
@@ -33,6 +39,7 @@ const BookingHistory = () => {
   };
 
   return (
+    <>
     <div className='booking-history'>
       <h2>Your Booking History</h2>
       <ul>
@@ -54,6 +61,11 @@ const BookingHistory = () => {
         ))}
       </ul>
     </div>
+     {/* Back to Home link */}
+     <div className="back-link">
+     <Link to="/">Back to Home</Link>
+   </div>
+    </>
   );
 };
 

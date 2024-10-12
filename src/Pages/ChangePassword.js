@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ChangePassword.css'; // Create a CSS file for styling if needed
 import {Link, useNavigate } from 'react-router-dom';
 
-const BaseURL = "http://localhost:4000";
+const BaseURL = "https://brs-backend-2rfc.onrender.com";
 
 
 const ChangePassword = () => {
