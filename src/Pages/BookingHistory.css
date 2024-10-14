@@ -59,7 +59,7 @@
     background-color: #0056b3;
   }
   
-  /* Media queries for responsiveness */
+
   @media (max-width: 768px) {
     .booking-history {
       width: 100%;

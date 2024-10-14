@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
-// crreate a base url 
-const BaseURL = "https://brs-backend-2rfc.onrender.com";
+import config from './config';
+const BaseURL = config.BASE_URL;
+
 
 function Login() {
   const [email, setEmail] = useState('');

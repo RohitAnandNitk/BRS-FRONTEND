@@ -3,7 +3,9 @@ import './BicycleList.css';
 import { useNavigate } from 'react-router-dom';
 
 
-const BaseURL = "https://brs-backend-2rfc.onrender.com";
+import config from './config';
+const BaseURL = config.BASE_URL;
+
 
 
 const BicycleList = () => {

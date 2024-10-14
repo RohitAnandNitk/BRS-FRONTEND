@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './AdminDashboard.css'; // Assuming you have a separate CSS file for styling
 import { Link  , useNavigate} from 'react-router-dom';
 
-const BaseURL = "https://brs-backend-2rfc.onrender.com";
+import config from './config';
+const BaseURL = config.BASE_URL;
+
 
 
 const AdminDashboard = () => {
