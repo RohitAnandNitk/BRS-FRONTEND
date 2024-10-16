@@ -66,6 +66,17 @@ const BookBicyle = () => {
     setFilteredBicycles(filtered);
   };
 
+
+  const clearFilters = () => {
+    setFilters({
+      rent: '',
+      location: '',
+      type: '',
+      status: ''
+    });
+    setFilteredBicycles(bicycles);  // Reset to show all bicycles
+  };
+
   return (
     <div className='lists'>
       <div className="filter-options">
@@ -86,7 +97,7 @@ const BookBicyle = () => {
             name="rent"
             value={filters.rent}
             onChange={handleFilterChange}
-            placeholder="Max rent"
+            placeholder="Max rent" min="0"
           />
         </div>
         <div>
@@ -108,6 +119,7 @@ const BookBicyle = () => {
           </select>
         </div>
         <button className='filter-btn' onClick={applyFilters}>Apply Filters</button>
+        <button className='filter-btn' onClick={clearFilters}>Clear Filters</button>
       </div>
 
       <div className='bipage' style={{ display: 'flex', flexWrap: 'wrap' }}>

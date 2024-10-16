@@ -47,7 +47,7 @@ const BookingHistory = () => {
       <ul>
         {bookings.map((booking) => (
           <li key={booking._id} className='booking-list'>
-            <p>Bicycle Location: {booking.bicycleId.location}</p>
+           
             <p>Total Cost: ₹{booking.totalCost}</p>
             <p>Booking Date: {booking.bookingDate}</p>
             <p>Return Date: {booking.returnDate || 'Not returned yet'}</p>

@@ -49,49 +49,52 @@ const AdminDashboard = () => {
   
   return (
     <>
-         <div className="container">
-      {/* Title of the Admin Page */}
-      <div className="header">
-         <h1>Bicyl Admin</h1>
-      </div>
+          {/* Admin section with picture and info, centered in the container */}
+          <div className="profile-section1">
+                  {/* Title of the Admin Page */}
+                  <div className="header">
+                    <h1>Bicyl Admin</h1>
+                  </div>
 
-      {/* Admin section with picture and info, centered in the container */}
-      <div className="admin-section">
-        {/* Left div for admin picture */}
-        <div className="left-div">
-          <img src="https://t4.ftcdn.net/jpg/04/75/00/99/360_F_475009987_zwsk4c77x3cTpcI3W1C1LU4pOSyPKaqi.jpg" alt="Admin pic" />
-        </div>
+              <div className='displayCol'>
+                  {/* Left div for admin picture */}
+                  <div className="left-div">
+                      <img src="https://t4.ftcdn.net/jpg/04/75/00/99/360_F_475009987_zwsk4c77x3cTpcI3W1C1LU4pOSyPKaqi.jpg" alt="Admin pic" />
+                  </div>
 
-        {/* Right div for admin information */}
-        <div className="right-div">
-          <div className="info">
-            <p><strong>Name:</strong>{admin.name}</p>
-            <p><strong>Email:</strong>{admin.email}</p>
-            {/* <p><strong>Phone:</strong>{admin.mobile}</p> */}
-            <Link to="/change-password"  className='change-password'>Change Password</Link>
+                  {/* Right div for admin information */}
+                  <div className="right-div">
+                    <div className="info">
+                      <p><strong>Name:</strong>{admin.name}</p>
+                      <p><strong>Email:</strong>{admin.email}</p>
+                      {/* <p><strong>Phone:</strong>{admin.mobile}</p> */}
+                      <Link to="/change-password"  className='change-password'>Change Password</Link>
+                    </div>
+                  </div>
+              </div>
           </div>
 
-          
-        </div>
-      </div>
-    </div>
-    <div className='containerd'>
-        <h2 className='heading2'>You can Add New Cycle , Update Info of existing Cycle and Delete the existing Cycle</h2>
-        {/* Buttons for adding, updating, and deleting cycles */}
-        <div className="button-container">
-            
-            <Link to="/add-cycle">
-              <button className="admin-btn">Add Cycle</button>
-            </Link>
-            <Link to="/update-cycle">
-              <button className="admin-btn">Update Cycle</button>
-            </Link>
-            <Link to="/delete-cycle">
-              <button className="admin-btn">Delete Cycle</button>
-            </Link>
+      
+      <div className='operation'> 
+          <h2 className='heading2'>You can Add New Cycle , Update Info of existing Cycle and Delete the existing Cycle</h2>
+          {/* Buttons for adding, updating, and deleting cycles */}
+          <div className="button-container">
+                <Link to="/add-cycle">
+                  <button className="admin-btn">Add Cycle</button>
+                </Link>
+                <Link to="/update-cycle">
+                  <button className="admin-btn">Update Cycle</button>
+                </Link>
+                <Link to="/delete-cycle">
+                  <button className="admin-btn">Delete Cycle</button>
+                </Link>
           </div>
+      </div>
 
-    </div>
+            {/* Back to Home link */}
+            <div className="back-link">
+            <Link to="/">Back to Home</Link>
+            </div>
     </>
   );
 }

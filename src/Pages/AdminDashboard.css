@@ -1,33 +1,39 @@
 
 
-.container {
+
+.profile-section1{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     background-color: white;
-    padding: 2px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    width: 800px;
-    margin: 3rem;
-    margin-left: 16rem;
-    height: 55vh; 
+    width: 40rem;
+    margin-left:  22rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-.containerd {
+.displayCol{
+    display: flex;
+    flex-direction: row;
+}
+
+.operation{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: white;
-   
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    width: 800px;
-    margin: 2rem;
-    margin-left: 16rem;
-    height: 50vh; 
+    width: 40rem;
+    margin-left:  22rem;
+    margin-bottom: 3rem;
 }
 
 .header {
@@ -50,7 +56,6 @@
 
 .left-div {
     display: flex;
-  
     padding : 1px;
 }   
 
@@ -60,15 +65,16 @@
     height: 150px;
     object-fit: cover;
     border: 3px solid #555;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
 }
 
 .right-div {
-    padding: 20px;
+    padding: 23px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 400px;
 }
 
 
