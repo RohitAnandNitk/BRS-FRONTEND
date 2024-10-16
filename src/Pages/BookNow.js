@@ -19,7 +19,7 @@ const BookNow = () => {
     returnDate: '',
     totalCost: ''
   });
-
+  const [success, setSuccess] = useState(false);
   const [bicycle, setBicycle] = useState(null); // Store bicycle details
   
    // sucessful submit
@@ -48,6 +48,15 @@ const BookNow = () => {
   
     const token = localStorage.getItem('token'); // Assume user is authenticated and token is stored
     console.log("token:", token);
+
+     // when someone try to booking without login....
+    if(token === null){
+      console.log("Please login first");
+      setSuccess(true);
+      setTimeout(() =>{
+         navigate('/Login');          
+      }, 2000 ); 
+    }
     
     try {
       const response = await fetch(`${BaseURL}/booking/book`, {
@@ -93,8 +102,10 @@ const BookNow = () => {
     {bicycle ? (
       <div className="bicycle-details">
         <h2 className="bicycle-title">Book Bicycle: {bicycle.type}</h2>
-        <h2 style={{color:'green', fontSize:'20px'}}>{ sucess ? <p><img src = "https://w7.pngwing.com/pngs/688/951/png-transparent-correct-mark-tick-icon-thumbnail.png" alt='valid sign pic' style={{height:'20px', marginRight:'8px'}}/> You have Booked  Sucessffuly.</p> : ""}</h2>
-        <p className="bicycle-location">Location: {bicycle.location}</p>
+        <h2 style={{color:'green', fontSize:'20px'}}>{ success ? <p><img src = "https://w7.pngwing.com/pngs/688/951/png-transparent-correct-mark-tick-icon-thumbnail.png" alt='valid sign pic' style={{height:'20px', marginRight:'8px'}}/> Please Login First. </p> : ""}</h2>
+        <h2 style={{color:'green', fontSize:'20px'}}>{ sucess ? <p><img src = "https://w7.pngwing.com/pngs/688/951/png-transparent-correct-mark-tick-icon-thumbnail.png" alt='valid sign pic' style={{height:'20px', marginRight:'8px'}}/> Booked Successfully. </p> : ""}</h2>
+       
+        {/* <p className="bicycle-location">Location: {bicycle.location}</p> */}
         <p className="bicycle-rent">Rent per day: ₹{bicycle.rent}</p>
   
         <div className="form-group">
