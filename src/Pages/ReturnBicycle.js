@@ -57,6 +57,8 @@ const ReturnBicycle = () => {
 
   const handleReturn = async () => {
     console.log("Enter in return handle function");
+     
+    console.log("Return Location is : " , returnLocation);
 
     const token = localStorage.getItem('token'); // Get token from localStorage
 
@@ -95,6 +97,7 @@ const ReturnBicycle = () => {
       <div>
         <label className='label'>Choose Return Location:</label>
         <select className='select' value={returnLocation} onChange={(e) => setReturnLocation(e.target.value)}>
+        <option value="">Select a location</option> {/* Default prompt */}
           {validLocations.map((location, index) => (
             <option key={location._id} value={location.name}>
               {location.name}

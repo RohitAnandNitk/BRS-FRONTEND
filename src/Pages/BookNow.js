@@ -28,6 +28,7 @@ const BookNow = () => {
   // Fetch the bicycle details
   useEffect(() => {
     const fetchBicycle = async () => {
+      console.log("Enter in fetch bicycle function : - ")
       try {
         const response = await fetch(`${BaseURL}/bicycle/${id}`); // 
         const data = await response.json();
@@ -40,53 +41,54 @@ const BookNow = () => {
     };
     
     fetchBicycle();
-  }, [id]);
+  }, []);
+
+  // calculating the cost 
+  const calculatelCost = () => {
+    // Convert the bookingDate and returnDate to Date objects
+    const bookingDateTime = new Date(bookingDetails.bookingDate);
+    const returnDateTime = new Date(bookingDetails.returnDate);
+    // Calculate the time difference in milliseconds
+    const timeDiffInMs = returnDateTime - bookingDateTime;
+    // Convert the time difference to hours
+    const hoursBooked =( timeDiffInMs / (1000 * 60 * 60)) / 24 ; 
+    console.log( `booked for ${ hoursBooked} days`);
+    // Calculate the total cost based on the number of hours
+    let totalCost = bicycle.rent;
+    if(hoursBooked){
+      totalCost =  bicycle.rent * hoursBooked;
+    }
+    return totalCost;
+  } 
+
 
   // Handle form submission for booking
-  const handleBooking = async () => {
-    console.log("Enter in handleBooking :-");
+  const handleBooking = () => {
+    console.log("Initiating payment...");
   
     const token = localStorage.getItem('token'); // Assume user is authenticated and token is stored
-    console.log("token:", token);
-
-     // when someone try to booking without login....
-    if(token === null){
+  
+    if (token === null) {
       console.log("Please login first");
       setSuccess(true);
-      setTimeout(() =>{
-         navigate('/Login');          
-      }, 2000 ); 
+      setTimeout(() => {
+        navigate('/Login');
+      }, 2000);
+      return;
     }
-    
-    try {
-      const response = await fetch(`${BaseURL}/booking/book`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`, // Include the token for authentication
-        },
-        body: JSON.stringify({
-          bicycleId: id,
-          bookingDate: bookingDetails.bookingDate,
-          returnDate: bookingDetails.returnDate,
-          // Remove totalCost here as the backend handles it
-        })
-      });
   
-      if (response.ok) {
-       // alert('Booking successful!');
-        showMess(true);
-        setTimeout(() =>{
-          navigate('/history'); // Redirect to the booking history page after booking
-        }, 2000 ); 
-
-      } else {
-        console.error('Failed to book the bicycle');
+    // Redirect to payment page with booking details (without creating booking yet)
+    navigate(`/payment`, {
+      state: {
+        bicycleId: id,
+        bookingDate: bookingDetails.bookingDate,
+        returnDate: bookingDetails.returnDate,
+        totalCost : calculatelCost(), // Pass the amount (rent)
       }
-    } catch (error) {
-      console.error('Error during booking:', error);
-    }
+    });
   };
+  
+  
   
 
   // Handle input changes for the form

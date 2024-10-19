@@ -15,6 +15,7 @@ const BicycleCard = ({id, type , location ,rent ,status ,pic}) => {
                 <p>Rent : ₹{rent}</p>
                 <p>Availability : {status}</p>
            </div>
+         
             <Link className='link'  to = {`/book-now/${id}`}><button className='booknow'> Book Now</button></Link>
         </div>
   )

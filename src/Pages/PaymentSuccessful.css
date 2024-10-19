@@ -1,0 +1,15 @@
+.massage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+    width: 800px;
+    background-color: aliceblue;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    margin: 15rem;
+    font-size:x-large;
+    color: green;
+}
+

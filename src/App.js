@@ -18,7 +18,14 @@ import UpdateBicycle from './Pages/UpdateBicycle';
 import BookNow from './Pages/BookNow';
 import BookingHistory from './Pages/BookingHistory';
 import ReturnBicycle from './Pages/ReturnBicycle';
-
+import Payment from './Pages/Payment';
+import PaymentSuccessful from './Pages/PaymentSuccessful';
+import PaymentFailed from './Pages/PaymentFailed';
+import ContactUs from './Pages/ContactUs';
+import PrivacyAndPolicy from './Pages/PrivacyAndPolicy';
+import TermsAndConditions from './Pages/TermsAndConditions';
+import HowToUse from './Pages/HowToUse';
+import WhoCanUse from './Pages/WhoCanUse';
 // React router dom for routes command for terminal : nmp i react-router-dom
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -64,6 +71,23 @@ const App = () => {
         
         {/* for see the bookin history */}
         <Route path="/booking-history" element = {<BookingHistory></BookingHistory>} ></Route>
+
+          
+        <Route path='/contact-us' element={<ContactUs></ContactUs>}></Route>
+        <Route path='/pandp' element={<PrivacyAndPolicy></PrivacyAndPolicy>}></Route>
+        <Route path='/tandc' element={<TermsAndConditions></TermsAndConditions>}></Route>
+        <Route path='/how-to-use' element={<HowToUse></HowToUse>}></Route>
+        <Route path='/who-can-use' element={<WhoCanUse></WhoCanUse>}></Route>
+
+         
+        {/* import PaymentPage from './PaymentPage'; // Import the payment page component */}
+        <Route path="/payment" element={<Payment />} />
+
+        {/* payment successfully  */}
+        <Route path = "/payment-success/:bicycleId"  element = {<PaymentSuccessful></PaymentSuccessful>}></Route>
+        
+        {/* payment  failed */}
+        <Route path="/payment-falied/:bicycleId" element={<PaymentFailed></PaymentFailed>}></Route>
 
       </Routes>
       <Footer />

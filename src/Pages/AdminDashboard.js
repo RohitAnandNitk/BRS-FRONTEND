@@ -14,7 +14,7 @@ const AdminDashboard = () => {
   const [admin, setadmin] = useState(null); // State to store admin info
 
     useEffect(() => {
-    fetch(`${BaseURL}/admin/profile`, { 
+      fetch(`${BaseURL}/admin/profile`, { 
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`, // Send token in the headers
       },
@@ -32,14 +32,14 @@ const AdminDashboard = () => {
         setadmin(data); // Correct function to set admin data
       })
       .catch((err) => console.error(err));
-  });
+  }, []); // Add empty dependency array to run useEffect only once
   
 
   if (!admin) {
     return <p>Loading...</p>;  // Add a loading state while admin data is being fetched
   }
 
-   console.log(admin);
+   console.log("welcome admin to the bicyl");
 
    //when token expired then Logout and redirect to login
    const handleLogout = () => {

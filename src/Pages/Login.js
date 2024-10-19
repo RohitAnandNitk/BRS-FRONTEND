@@ -19,24 +19,25 @@ function Login() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent page refresh
-    console.log("entrerd in handlesubmit function")
+    console.log("entered in handleSubmit function");
+  
     // Make a POST request to your backend authentication endpoint
     try {
       const selectedUserRole = document.getElementById("user").value;
       console.log(selectedUserRole);
-
+  
       const path = selectedUserRole === 'admin' ? `${BaseURL}/admin/login` : `${BaseURL}/user/login`;
-     
-      const response = await fetch( path , {
+  
+      const response = await fetch(path, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, password }), // Send email and password to the backend
       });
-
+  
       const data = await response.json();
-
+  
       if (response.ok) {
         // Successful login
         console.log('Login successful:', data);
@@ -45,31 +46,27 @@ function Login() {
         localStorage.setItem('role', data.role); // Save token to localStorage
         console.log('Login successful!');
         showMess(true);
-
-        setTimeout(() =>{
-          
-            // Redirect or take action based on successful login
-            // Redirect based on user role
-            if (selectedUserRole === 'admin') {
-              navigate('/admin-dashboard'); // Navigate admin to dashboard
-            } else {
-              navigate('/book-bicycle'); // Navigate renter to book bicycle page
-            }
-        }, 2000 ); 
-
+  
+        setTimeout(() => {
+          // Redirect based on user role
+          if (selectedUserRole === 'admin') {
+            navigate('/admin-dashboard'); // Navigate admin to dashboard
+          } else {
+            navigate('/book-bicycle'); // Navigate renter to book bicycle page
+          }
+        }, 2000);
       } else {
         // Error handling
         setError(data.message || 'Login Failed');
         console.error('Login failed:', data.message);
-        console.log(`Login failed: ${data.message}`);
-       
       }
     } catch (error) {
-      setError(error || 'Error during   login');
-      console.error('Error during   login:', error);
-      console.log('An error occurred during login. Please try again later.');
+      // Ensure to extract the message from the Error object
+      setError(error.message || 'Error during login');
+      console.error('Error during login:', error.message);
     }
   };
+  
 
   return (
     <div className="login-page">

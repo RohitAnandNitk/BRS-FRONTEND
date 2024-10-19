@@ -6,14 +6,14 @@ const  Footer = () => {
     <div className='Footer'>
        <div>
           <h1>SUPPORT</h1> 
-           <p><Link to= "" className='link'>Contact Us</Link></p>
-           <p><Link to= "" className='link'>Privacy and Policy</Link></p>
-           <p><Link to= "" className='link'>Terms and Conditions</Link></p>
+           <p><Link to= "/contact-us" className='link'>Contact Us</Link></p>
+           <p><Link to= "/pandp" className='link'>Privacy and Policy</Link></p>
+           <p><Link to= "/tandc" className='link'>Terms and Conditions</Link></p>
        </div>
        <div>
           <h1>FAQ</h1> 
-           <p><Link to= "" className='link'>How to Use?</Link></p>
-           <p><Link to= "" className='link'>Who can Use?</Link></p>
+           <p><Link to= "how-to-use" className='link'>How to Use?</Link></p>
+           <p><Link to= "who-can-use" className='link'>Who can Use?</Link></p>
        </div>
        <div>
           <h1>ABOUT</h1> 

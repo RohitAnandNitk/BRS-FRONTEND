@@ -1,0 +1,103 @@
+
+
+/* h1, h3 {
+    color: #333;
+} */
+
+.container {
+    width: 80%;
+    margin-top: 3rem;   
+    margin-bottom: 3rem;   
+    padding: 20px;
+}
+ 
+.contact-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Flexbox Layout */
+ .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contact-form, .contact-info {
+    flex: 1 1 45%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    margin-bottom: 20px;
+} 
+
+/* Form Styles */
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+} 
+
+/* Contact Info Styles */
+ .contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.info-item {
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    font-size: 1.1rem;
+}
+
+.info-item strong {
+    font-weight: bold;
+} 

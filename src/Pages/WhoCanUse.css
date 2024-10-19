@@ -1,0 +1,37 @@
+.container9 {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+ 
+
+  ol {
+    list-style-type: decimal;
+    margin-left:50px;
+    font-size: 1.2rem; 
+
+  }
+  
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  p, li {
+    margin: 8px 0;
+    line-height: 1.6;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
