@@ -1,81 +1,92 @@
-
 .update-bicycle-container {
-    max-width: 600px;
-    margin-top: 3rem; 
-    margin-bottom: 3rem; 
-    margin-left: 22rem;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 3rem auto; /* Centering the container */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.update-bicycle-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.update-bicycle-container label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.update-bicycle-container input,
+.update-bicycle-container select,
+.update-bicycle-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.update-bicycle-container textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.update-bicycle-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.update-bicycle-container button:hover {
+  background-color: #45a049;
+}
+
+.update-bicycle-container .error {
+  color: red;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.update-bicycle-container .loading {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .update-bicycle-container {
+      margin: 2rem 1rem; /* Add some margin on the sides for smaller screens */
+      padding: 15px; /* Reduce padding */
   }
-  
 
   .update-bicycle-container h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+      font-size: 24px; /* Adjust heading size for smaller screens */
   }
-  
-
-  .update-bicycle-container label {
-    display: block;
-    margin-bottom: 10px;
-    color: #333;
-    font-weight: bold;
-  }
-  
 
   .update-bicycle-container input,
   .update-bicycle-container select,
   .update-bicycle-container textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box;
+      font-size: 14px; /* Slightly reduce font size for inputs */
   }
-  
 
-  .update-bicycle-container textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-  
-  
   .update-bicycle-container button {
-    width: 100%;
-    padding: 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+      padding: 10px; /* Reduce button padding */
+      font-size: 14px; /* Adjust button font size */
   }
-  
- 
-  .update-bicycle-container button:hover {
-    background-color: #45a049;
-  }
-  
-
-  .update-bicycle-container .error {
-    color: red;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 14px;
-  }
-  
-
-  .update-bicycle-container .loading {
-    text-align: center;
-    font-size: 18px;
-    color: #333;
-  }
-  
+}

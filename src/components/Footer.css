@@ -1,12 +1,39 @@
-.Footer{
+/* Base Styles */
+.Footer {
     background-color: black;
     color: white;
     display: flex;
     align-items: center;
-    justify-content: space-around ;
+    justify-content: space-around;
+    padding: 20px;
 }
 
-.link{
+.link {
     text-decoration: none;
     color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .Footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .Footer .link {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .Footer {
+        padding: 10px;
+    }
+
+    .Footer .link {
+        font-size: 14px;
+        padding: 5px 0;
+    }
 }

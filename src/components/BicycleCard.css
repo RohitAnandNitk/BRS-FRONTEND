@@ -1,81 +1,95 @@
-.card{
-     flex-wrap: wrap;
-
-     width : 250px; 
-     padding :5px 5px ;
-     background-color: #fff;
-     margin :25px;
-     box-shadow: 8px 10px #807e7e;
+.card {
+  display: flex; /* Ensure flex is applied */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center content horizontally */
+  width: 250px; 
+  padding: 5px;
+  background-color: #fff;
+  margin: 25px 25px 25px 25px;
+  box-shadow: 8px 10px #807e7e;
+  border-radius: 8px; /* Optional: add slight rounding for a softer look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effects */
 }
 
-.card img{
-    width : 250px;
-    height: 200px;
+.card:hover {
+  transform: translateY(-5px); /* Move card up slightly on hover */
+  box-shadow: 12px 14px #606060; /* Darker shadow on hover for depth */
 }
 
+.card img {
+  width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: rounding for the image */
+}
 
-.info{ 
+.info { 
   align-items: center;
-    text-align: center;
-     font-weight:bold;
+  text-align: center;
+  font-weight: bold;
 }
 
-.link{
+.link {
   text-decoration: none;
 }
 
-
 .booknow {
-    padding: 0.75rem;
-    font-size: 1rem;
-    background-color: #353636;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 230px;
-  }
-  
-  .booknow:hover {
-    background-color: #000000;
-  }
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #353636;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transition for button background */
+  width: 15rem; /* Make button full width */
+}
 
-  .filter-options {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+.booknow:hover {
+  background-color: #000000;
+}
+
+.filter-options {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.filter-options div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.filter-options label {
+  margin-bottom: 5px;
+}
+
+.filter-options input,
+.filter-options select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filter-btn {
+  padding: 10px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bipage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+      width: 100%; /* Full width on small screens */
+      margin: 10px 0; /* Adjust margin for spacing */
   }
-  
-  .filter-options div {
-    display: flex;
-    flex-direction: column;
-    margin-right: 10px;
-  }
-  
-  .filter-options label {
-    margin-bottom: 5px;
-  }
-  
-  .filter-options input, .filter-options select {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .filter-btn {
-    padding: 10px 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    
-  }
-  
-  .bipage {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
+}

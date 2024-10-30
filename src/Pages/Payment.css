@@ -1,17 +1,46 @@
-.payment-container{
+.payment-container {
     background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    margin-left: 23rem;
+    margin: 3rem auto; /* Centered horizontally */
     border-radius: 1.5rem;
     padding: 2rem;
-    width: 600px;
+    width: 600px; /* Default width for larger screens */
 }
 
-.pay-btn{
+/* Payment Button */
+.pay-btn {
     width: 15rem;
 }
 
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .payment-container {
+        width: 80%; /* Increased width for smaller screens */
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .payment-container {
+        width: 90%; /* Wider for better readability */
+        padding: 1.2rem;
+        margin: 1.5rem auto;
+    }
+    .pay-btn {
+        width: 12rem; /* Adjusted button size */
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-container {
+        width: 95%; /* Near full width for mobile */
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    .pay-btn {
+        width: 100%; /* Full-width button for mobile */
+    }
+}

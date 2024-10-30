@@ -1,6 +1,5 @@
-
-
-.profile-section{
+/* Base Styles */
+.profile-section {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,12 +8,10 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    width: 40rem;
-    margin-left:  22rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 40rem;
+    margin: 2rem auto;
 }
-
 
 .left-div {
     display: flex;
@@ -33,12 +30,12 @@
 
 .right-div {
     flex: 1;
-    padding: 20px 100px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: #030303;
-    width: 400px;   
+    max-width: 400px;
 }
 
 .right-div h1 {
@@ -57,7 +54,7 @@
 
 .info strong {
     display: inline-block;
-    width: 120px; 
+    width: 120px;
 }
 
 .history-section {
@@ -69,15 +66,14 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    width: 40rem;
-    margin-left:  22rem;
-
+    width: 100%;
+    max-width: 40rem;
+    margin: 2rem auto;
 }
 
 .history-section h2 {
     margin: 1rem;
     padding-bottom: 10px;
-    
 }
 
 .change-password-btn {
@@ -112,16 +108,75 @@
     text-decoration: none;
 }
 
-
-
-
-.booking-history{
-   text-decoration: none;
-   text-align: center;
-  padding: 5rem;
-
+.booking-history {
+    text-decoration: none;
+    text-align: center;
+    padding: 5rem;
 }
 
-.booking-history:hover{
+.booking-history:hover {
     color: black;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .right-div {
+        padding: 20px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-section,
+    .history-section {
+        flex-direction: column;
+        padding: 15px;
+        width: 90%;
+    }
+
+    .right-div {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .left-div img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .change-password-btn {
+        font-size: 12px;
+    }
+
+    .info strong {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-section,
+    .history-section {
+        padding: 10px;
+    }
+
+    .left-div img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .right-div h1 {
+        font-size: 1.2rem;
+    }
+
+    .change-password-btn {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .booking-history {
+        padding: 2rem;
+    }
+
+    .info strong {
+        width: 80px;
+    }
 }

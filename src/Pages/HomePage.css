@@ -1,6 +1,30 @@
-.bipage{
+.HomePage {
     background-color: rgb(161, 158, 158);
-    display: flex row;
-   justify-content: center;
-   align-items: center ;
+    display: flex;
+    flex-direction: column; /* Changed to column for better stacking */
+    align-items: center; /* Center align items */
+    padding: 20px; /* Add padding for breathing space */
+}
+
+.hero-section {
+    width: 100%; /* Ensure full width */
+    margin-bottom: 20px; /* Space between HeroSection and BookBicycle */
+}
+
+.book-bicycle {
+    width: 100%; /* Ensure full width */
+    max-width: 800px; /* Set a maximum width for BookBicycle */
+    margin: 0 auto; /* Center the BookBicycle section */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .HomePage {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .hero-section,
+    .book-bicycle {
+        width: 100%; /* Full width on small screens */
+    }
 }

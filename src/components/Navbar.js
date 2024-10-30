@@ -43,12 +43,12 @@ const Navbar = () => {
                 <li><Link to="/profile" className='link'>Profile</Link></li>
               )}
 
-              <li><Link onClick={handleLogout} to="/" className='logout-button'>Logout</Link></li>
+              <li><Link onClick={handleLogout} to="/" className='logout-button'>Signout</Link></li>
             </>
           ) : (
             <>
               {/* Show Login and Signup if user is not logged in */}
-              <li><Link to="/login" className='link'>Login</Link></li>
+              <li><Link to="/login" className='link'>Signin</Link></li>
               <li><Link to="/signup" className='link'>Signup</Link></li>
             </>
           )}

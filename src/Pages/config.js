@@ -11,3 +11,4 @@ const config = {
   
   export default config;
   
+  //for shifting from local to deployment =>  base url and one more change at paymet route page in backend

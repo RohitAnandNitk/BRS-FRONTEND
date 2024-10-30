@@ -1,0 +1,32 @@
+/* Carousel Container */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Carousel Slide */
+.carousel-slide {
+    width: 100%;
+    height: 500px;
+    position: relative; /* Position for proper alignment */
+}
+
+/* Carousel Images */
+.carousel-slide img {
+    width: 100%; /* Ensures image covers width of slide */
+    height: 100%; /* Ensures image covers height of slide */
+    object-fit: cover; /* Ensures the image fills the slide without distortion */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .carousel-slide {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-slide {
+        height: 200px;
+    }
+}

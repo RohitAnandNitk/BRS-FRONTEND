@@ -1,39 +1,26 @@
-
-
-
-.profile-section1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: white;
+.profile-section1 {
+    width: 48%;
+    margin: 20px auto;
     padding: 20px;
+    background-color: #f9f9f9;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    width: 40rem;
-    margin-left:  22rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.displayCol{
+.displayCol {
     display: flex;
     flex-direction: row;
 }
 
-.operation{
+.operation {
+    width: 48%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    width: 40rem;
-    margin-left:  22rem;
-    margin-bottom: 3rem;
 }
 
 .header {
@@ -56,7 +43,7 @@
 
 .left-div {
     display: flex;
-    padding : 1px;
+    padding: 1px;
 }   
 
 .left-div img {
@@ -77,13 +64,10 @@
     width: 400px;
 }
 
-
-
 .info {
     display: flex;
     flex-direction: column;
-    align-items:start;
-
+    align-items: start;
 }
 
 .info p {
@@ -98,26 +82,25 @@
 
 .button-container {
     display: flex;
-    gap: 20px;
-   
 }
 
-.heading2{
+.heading2 {
     padding: 1rem;
     text-align: center;
 }
 
 .admin-btn {
     padding: 10px 20px;
-    background-color:  black;
+    background-color: black;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s; /* Add transition */
 }
 
-.admin-btn:hover{
+.admin-btn:hover {
     background-color: #000000;
 }
 
@@ -132,7 +115,72 @@
     font-size: 16px;
     margin: 2rem;
 }
+
 .change-password:hover {
     background-color: #000000;
 }
 
+.booking-history1 {
+    width: 48%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booking-history1 h2 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.booking-history1 button {
+    background-color: #080d11;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.booking-history1 button:hover {
+    background-color: #080d11;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .profile-section1, .operation, .booking-history1 {
+        width: 90%; /* Change width to 90% for smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .displayCol {
+        flex-direction: column; /* Stack the profile picture and info */
+        align-items: center; /* Center the items */
+    }
+
+    .left-div {
+        margin-bottom: 20px; /* Add some spacing below the image */
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center the buttons */
+        gap: 10px; /* Adjust gap for smaller screens */
+    }
+
+    .admin-btn {
+        width: 100%; /* Make buttons full width */
+        padding: 15px; /* Adjust padding for better touch targets */
+    }
+
+   
+
+    .booking-history1 button {
+        width: 100%; /* Make booking history button full width */
+    }
+}

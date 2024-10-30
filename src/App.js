@@ -26,6 +26,8 @@ import PrivacyAndPolicy from './Pages/PrivacyAndPolicy';
 import TermsAndConditions from './Pages/TermsAndConditions';
 import HowToUse from './Pages/HowToUse';
 import WhoCanUse from './Pages/WhoCanUse';
+import AllBookingHistory from './Pages/AllBookingHistory';
+
 // React router dom for routes command for terminal : nmp i react-router-dom
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -88,6 +90,9 @@ const App = () => {
         
         {/* payment  failed */}
         <Route path="/payment-falied/:bicycleId" element={<PaymentFailed></PaymentFailed>}></Route>
+
+        {/* all booking history */}
+        <Route path ="/all-booking-history" element ={<AllBookingHistory></AllBookingHistory>}></Route>
 
       </Routes>
       <Footer />

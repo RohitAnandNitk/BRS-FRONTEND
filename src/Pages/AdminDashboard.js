@@ -45,7 +45,23 @@ const AdminDashboard = () => {
    const handleLogout = () => {
     localStorage.removeItem('token');  // Remove token from storage
     navigate('/login');  // Redirect to login page
-  };
+    };
+    
+   const handleAllBookingHistory = () => {
+       navigate("/all-booking-history");
+   }
+   const handleAllBookingHistory0 = () => {
+       navigate("/change-password");
+   }
+   const handleAllBookingHistory1 = () => {
+       navigate("/add-cycle");
+   }
+   const handleAllBookingHistory2 = () => {
+       navigate("/update-cycle");
+   }
+   const handleAllBookingHistory3 = () => {
+       navigate("/delete-cycle");
+   }
   
   return (
     <>
@@ -68,7 +84,7 @@ const AdminDashboard = () => {
                       <p><strong>Name:</strong>{admin.name}</p>
                       <p><strong>Email:</strong>{admin.email}</p>
                       {/* <p><strong>Phone:</strong>{admin.mobile}</p> */}
-                      <Link to="/change-password"  className='change-password'>Change Password</Link>
+                      <button className='admin-btn' onClick={handleAllBookingHistory0}>Change Password</button>
                     </div>
                   </div>
               </div>
@@ -79,17 +95,22 @@ const AdminDashboard = () => {
           <h2 className='heading2'>You can Add New Cycle , Update Info of existing Cycle and Delete the existing Cycle</h2>
           {/* Buttons for adding, updating, and deleting cycles */}
           <div className="button-container">
-                <Link to="/add-cycle">
-                  <button className="admin-btn">Add Cycle</button>
-                </Link>
-                <Link to="/update-cycle">
-                  <button className="admin-btn">Update Cycle</button>
-                </Link>
-                <Link to="/delete-cycle">
-                  <button className="admin-btn">Delete Cycle</button>
-                </Link>
+                {/* <Link to="/add-cycle"> */}
+                  <button className="admin-btn" onClick={handleAllBookingHistory1}>Add Cycle</button>
+                {/* </Link> */}
+                {/* <Link to="/update-cycle"> */}
+                  <button className="admin-btn" onClick={handleAllBookingHistory2}>Update Cycle</button>
+                {/* </Link> */}
+                {/* <Link to="/delete-cycle"> */}
+                  <button className="admin-btn" onClick={handleAllBookingHistory3}>Delete Cycle</button>
+                {/* </Link> */}
           </div>
+
       </div>
+          <div className='booking-history1'>
+            <h2>Users Booking History</h2>
+            <button onClick={handleAllBookingHistory}>See Users Booking History</button>     
+          </div>
 
             {/* Back to Home link */}
             <div className="back-link">

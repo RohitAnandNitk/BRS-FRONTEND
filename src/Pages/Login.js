@@ -12,7 +12,7 @@ function Login() {
 
   const [error, setError] = useState(''); // Error state for storing error messages
   // sucessful submit
-  const [sucess, showMess] = useState(false);
+  const [sucess, showMess] = useState('');
  
   const navigate = useNavigate(); // Call useNavigate at the top level of the component
 
@@ -45,7 +45,8 @@ function Login() {
         localStorage.setItem('token', data.token); // Save token to localStorage
         localStorage.setItem('role', data.role); // Save token to localStorage
         console.log('Login successful!');
-        showMess(true);
+        console.log(data.token);
+        showMess('You have Logged In Sucessffuly.');
   
         setTimeout(() => {
           // Redirect based on user role
@@ -57,7 +58,7 @@ function Login() {
         }, 2000);
       } else {
         // Error handling
-        setError(data.message || 'Login Failed');
+        setError('Invalid Email or Password');
         console.error('Login failed:', data.message);
       }
     } catch (error) {
@@ -72,14 +73,14 @@ function Login() {
     <div className="login-page">
       <div className="login-container">
         <h2>Login</h2>
-        <h2 style={{color:'green', fontSize:'20px'}}>{ sucess ? <p><img src = "https://w7.pngwing.com/pngs/688/951/png-transparent-correct-mark-tick-icon-thumbnail.png" alt='valid sign pic' style={{height:'20px', marginRight:'8px'}}/> You have Logged In Sucessffuly.</p> : ""}</h2>
+        
         
         {/* Display error message */}
-        {error && (
+        {error && !sucess ? (
           <p style={{ color: 'red', fontSize: '16px' }}>
-            <strong>Error:</strong> {error}
+            <strong>{error}</strong> 
           </p>
-        )}
+        ) : (<h2 style={{color:'green', fontSize:'20px'}}><p>{sucess}</p></h2>)}
         
         
         <form>

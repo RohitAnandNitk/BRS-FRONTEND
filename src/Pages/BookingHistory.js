@@ -10,35 +10,36 @@ const BookingHistory = () => {
   const [bookings, setBookings] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchBookings = async () => {
-      const token = localStorage.getItem('token');
-      
-      console.log("token" ,token);
+    useEffect(() => {
+      const fetchBookings = async () => {
+        const token = localStorage.getItem('token');
+        
+        console.log("token" ,token);
 
-      const response = await fetch( `${BaseURL}/booking` , { // 'http://localhost:4000/booking'
-        headers: {
-          'Authorization': `Bearer ${token}`
+        const response = await fetch( `${BaseURL}/booking` , { // 'http://localhost:4000/booking'
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        const data = await response.json();
+
+        if (response.status === 404) {
+          setBookings([]);
+        } else {
+          console.log(data);
+          setBookings(data);
         }
-      });
-      const data = await response.json();
 
-      if (response.status === 404) {
-        setBookings([]);
-      } else {
-        setBookings(data);
-      }
+        console.log(data);
+      };
+      fetchBookings();
+    }, []);
 
-      console.log(data);
+    const handleReturnClick = (bookingId) => {
+      console.log("button clicked for the returnBicycle page");
+      navigate(`/return-bicycle/${bookingId}`);
+
     };
-    fetchBookings();
-  }, []);
-
-  const handleReturnClick = (bookingId) => {
-    console.log("button clicked for the returnBicycle page");
-    navigate(`/return-bicycle/${bookingId}`);
-
-  };
 
   return (
     <>
