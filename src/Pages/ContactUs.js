@@ -1,12 +1,75 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import './ContactUs.css';
+import { useNavigate , Link } from 'react-router-dom';
 
+import config from './config';
+const BaseURL = config.BASE_URL;
 
 function ContactUs() {
-  const handleSubmit = (e) => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    phone :"",
+    subject:"",
+    message:""
+  });
+  const [success, setMess] = useState(false);
+  const [error, showError] = useState({});
+
+
+  const handleChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const navigate = useNavigate();
+
+  const handleSubmit =async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
+
+    const occurredError = {};
+
+    if (user.name === "") {
+      occurredError.name = "Please Enter Name";
+      showError(occurredError);
+      return;
+    }
+
+    if (user.email === "") {
+      occurredError.email = "Please Enter Email";
+      showError(occurredError);
+      return;
+    }
+
+    if (user.subject === "") {
+      occurredError.subject = "Please Enter subject";
+      showError(occurredError);
+      return;
+    }
+
+    if (user.message === "") {
+      occurredError.message = "Please Enter message";
+      showError(occurredError);
+      return;
+    }
+
+
+    try {
+      const response = await fetch(`${BaseURL}/contactus/submit`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user),
+      });
+
+      console.log("Message from server:", response);
+      setMess(true);
+      setTimeout(() => {
+        navigate('/');
+      }, 2000);
+    } catch (err) {
+      console.log({ error: "Failed to Signup" });
+    }
     console.log('Form submitted');
+    showError(occurredError);
   };
 
   return (
@@ -15,37 +78,41 @@ function ContactUs() {
         <h1>Get in Touch</h1>
         <p>We're here to help! Feel free to contact us with any questions or concerns.</p>
       </div>
-
+      {success && <p style={{ color: 'green', fontSize: '20px' }}>{user.name} You Query Submitted successfully.</p>}
       <div className="contact-container">
         <div className="contact-form">
           <form onSubmit={handleSubmit}>
 
             <div>
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name.." required />
+              <label>Name</label>
+              <span style={{ color: 'red' }}>{error.name}</span>
+              <input type="text" id="name" name="name" placeholder="Your name.." required onChange={handleChange} value={user.name}/>
             </div>
 
             <div>
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="Your email.." required />
+              <label>Email</label>
+              <span style={{ color: 'red' }}>{error.email}</span>
+              <input type="email" id="email" name="email" placeholder="Your email.." required onChange={handleChange} value={user.email}/>
             </div>
 
             <div>
-              <label htmlFor="phone">Phone (Optional)</label>
-              <input type="tel" id="phone" name="phone" placeholder="Your phone number.." />
+              <label>Phone (Optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number.." onChange={handleChange} value={user.phone}/>
             </div>
 
             <div>
-              <label htmlFor="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Subject.." required />
+              <label>Subject</label>
+              <span style={{ color: 'red' }}>{error.subject}</span>
+              <input type="text" id="subject" name="subject" placeholder="Subject.." required onChange={handleChange} value={user.subject} />
             </div>
 
             <div>
-              <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" placeholder="Write your message here.." required></textarea>
+              <label>Message</label>
+              <span style={{ color: 'red' }}>{error.message}</span>
+              <textarea id="message" name="message" placeholder="Write your message here.." required onChange={handleChange} value={user.message}></textarea>
             </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit" onClick={handleSubmit}>Submit</button>
           </form>
         </div>
 

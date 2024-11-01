@@ -9,6 +9,14 @@ const BaseURL = config.BASE_URL;
 const BookingHistory = () => {
   const [bookings, setBookings] = useState([]);
   const navigate = useNavigate();
+   
+  
+   // Function to format the date and get the day of the week
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString(undefined, options); // Adjust locale as needed
+  };
 
     useEffect(() => {
       const fetchBookings = async () => {
@@ -50,8 +58,8 @@ const BookingHistory = () => {
           <li key={booking._id} className='booking-list'>
            
             <p>Total Cost: ₹{booking.totalCost}</p>
-            <p>Booking Date: {booking.bookingDate}</p>
-            <p>Return Date: {booking.returnDate || 'Not returned yet'}</p>
+            <p>Booking Date: {formatDate(booking.bookingDate)}</p>
+            <p>Return Date: {formatDate(booking.returnDate)}</p>
             <p>Booking status : {booking.status}</p>
 
             

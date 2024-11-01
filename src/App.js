@@ -27,6 +27,7 @@ import TermsAndConditions from './Pages/TermsAndConditions';
 import HowToUse from './Pages/HowToUse';
 import WhoCanUse from './Pages/WhoCanUse';
 import AllBookingHistory from './Pages/AllBookingHistory';
+import QueryHistory from './Pages/QueryHistory';
 
 // React router dom for routes command for terminal : nmp i react-router-dom
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -93,6 +94,9 @@ const App = () => {
 
         {/* all booking history */}
         <Route path ="/all-booking-history" element ={<AllBookingHistory></AllBookingHistory>}></Route>
+       
+       {/* all contact us querise  */}
+       <Route path = "/contactus-querise" element = {<QueryHistory></QueryHistory>}></Route>
 
       </Routes>
       <Footer />

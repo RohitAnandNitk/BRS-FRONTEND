@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState , useCallback } from 'react';
 import './AdminDashboard.css'; // Assuming you have a separate CSS file for styling
 import { Link  , useNavigate} from 'react-router-dom';
 
@@ -12,6 +12,12 @@ const AdminDashboard = () => {
    const navigate = useNavigate();
    
   const [admin, setadmin] = useState(null); // State to store admin info
+  
+  //when token expired then Logout and redirect to login
+  const handleLogout = useCallback(() => {
+    localStorage.removeItem('token');  // Remove token from storage
+    navigate('/login');  // Redirect to login page
+    }, [navigate]);
 
     useEffect(() => {
       fetch(`${BaseURL}/admin/profile`, { 
@@ -32,7 +38,7 @@ const AdminDashboard = () => {
         setadmin(data); // Correct function to set admin data
       })
       .catch((err) => console.error(err));
-  }, []); // Add empty dependency array to run useEffect only once
+  }, [handleLogout]); // Add empty dependency array to run useEffect only once
   
 
   if (!admin) {
@@ -41,11 +47,7 @@ const AdminDashboard = () => {
 
    console.log("welcome admin to the bicyl");
 
-   //when token expired then Logout and redirect to login
-   const handleLogout = () => {
-    localStorage.removeItem('token');  // Remove token from storage
-    navigate('/login');  // Redirect to login page
-    };
+   
     
    const handleAllBookingHistory = () => {
        navigate("/all-booking-history");
@@ -62,7 +64,11 @@ const AdminDashboard = () => {
    const handleAllBookingHistory3 = () => {
        navigate("/delete-cycle");
    }
-  
+   
+   const handleAllUserQuerise = () => {
+       navigate("/contactus-querise");
+   }
+
   return (
     <>
           {/* Admin section with picture and info, centered in the container */}
@@ -107,10 +113,18 @@ const AdminDashboard = () => {
           </div>
 
       </div>
-          <div className='booking-history1'>
-            <h2>Users Booking History</h2>
-            <button onClick={handleAllBookingHistory}>See Users Booking History</button>     
-          </div>
+
+      <div className='booking-history1'>
+        <h2>Users Booking History</h2>
+        <button onClick={handleAllBookingHistory}>See Users Booking History</button>     
+      </div>
+
+      <div className='booking-history1'>
+        <h2>Users Querise</h2>
+        <button onClick={handleAllUserQuerise}>See Users Query History</button>     
+      </div>
+
+
 
             {/* Back to Home link */}
             <div className="back-link">

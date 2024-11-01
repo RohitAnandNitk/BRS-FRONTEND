@@ -39,7 +39,7 @@ function TermsAndConditions() {
       <p>If you have any questions about these Terms, please contact us at purwarpalak53@gmail.com.</p>
 
       <footer>
-        <a href="#" className="btn">Back to Home</a>
+        <a href="/" className="btn">Back to Home</a>
       </footer>
     </div>
   );

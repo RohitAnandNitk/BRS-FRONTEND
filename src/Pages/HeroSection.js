@@ -5,7 +5,7 @@ import ResponsiveCarousel from '../components/ResponsiveCarousel' // Import the 
 function HeroSection() {
   return (
     <div className='hero'>
-        <div class="hero-info">
+        <div className="hero-info">
             <h1>Welcome to Bicyl</h1>
             <p>
                   Discover a seamless and eco-friendly way to explore your city with Bicyl.
@@ -14,7 +14,7 @@ function HeroSection() {
                   Bicyl offers flexible options to meet your needs. Join our community of riders
                   and contribute to a greener, healthier world!
             </p>
-            <a href="/signup" class="btn-primary">Get Started</a>
+            <a href="/signup" className="btn-primary">Get Started</a>
         </div>
        <div className='carousel-container'> <ResponsiveCarousel/></div> {/* Include the carousel component */}
     </div>

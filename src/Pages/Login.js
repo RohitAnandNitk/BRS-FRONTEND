@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate , Link } from 'react-router-dom'; // Import useNavigate
 
 import config from './config';
 const BaseURL = config.BASE_URL;
@@ -113,6 +113,7 @@ function Login() {
           </div>
           <button type="submit" className="login-button" onClick={handleSubmit}>Login</button>
         </form>
+          <p>Don't have an account?<Link to ="/Signup"> Sign up.</Link></p>
       </div>
     </div>
   );

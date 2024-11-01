@@ -19,7 +19,7 @@ const BookNow = () => {
   const [success, setSuccess] = useState(false);
   const [bicycle, setBicycle] = useState(null); // Store bicycle details
   const [dates, setDates] = useState(false); // Handle bicycle dates
- // const [sucess, setMess] = useState(false); // Successful submit
+  const [avai, setAvai] = useState(false); // handle availability of bicycle
 
   // Fetch the bicycle details
   useEffect(() => {
@@ -31,6 +31,11 @@ const BookNow = () => {
         setBicycle(data); // Set the fetched bicycle details
        
         console.log("bicycle data :", data);
+
+       if(data.status !== "available"){
+          setAvai(true);
+          return;
+       }
       } catch (error) {
         console.error('Error fetching bicycle details:', error);
       }
@@ -60,6 +65,7 @@ const BookNow = () => {
 
   // Handle form submission for booking
   const handleBooking = () => {
+    if(avai) return;
     console.log("Initiating payment...");
   
     const token = localStorage.getItem('token'); // Assume user is authenticated and token is stored
@@ -83,7 +89,12 @@ const BookNow = () => {
     const returnDateTime = new Date(bookingDetails.returnDate);
 
     // Handle booking dates validity
-    if (bookingDateTime >= returnDateTime) {
+    if (bookingDateTime > returnDateTime) {
+      setDates(true);
+      return;
+    }
+     
+    if(bookingDateTime < Date.now()){
       setDates(true);
       return;
     }
@@ -114,7 +125,7 @@ const BookNow = () => {
         <div className="bicycle-details">
           <h2 className="bicycle-title">Book Bicycle: {bicycle.type}</h2>
           <h2 style={{ color: 'green', fontSize: '20px' }}>{success ? <p><img src="https://w7.pngwing.com/pngs/688/951/png-transparent-correct-mark-tick-icon-thumbnail.png" alt='valid sign pic' style={{ height: '20px', marginRight: '8px' }} /> Please Login First. </p> : ""}</h2>
-          {/* <h2 style={{ color: 'green', fontSize: '20px' }}>{sucess ? <p><img src="https://w7.pngwing.com/pngs/688/951/png-transparent-correct-mark-tick-icon-thumbnail.png" alt='valid sign pic' style={{ height: '20px', marginRight: '8px' }} /> Booked Successfully. </p> : ""}</h2> */}
+          <h2 style={{ color: 'red', fontSize: '20px' }}>{avai ? <p style={{ color: 'red' }}>Selected Bicycle is Unavailable. Please select another!</p> : ""}</h2>
           <h2 style={{ color: 'red', fontSize: '20px' }}>{dates ? <p style={{ color: 'red' }}>Please Select Valid Date.</p> : ""}</h2>
           <p className="bicycle-rent">Rent per day: ₹{bicycle.rent}</p>
 

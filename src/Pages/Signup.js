@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Signup.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link } from 'react-router-dom';
 import config from './config';
 
 const BaseURL = config.BASE_URL;
@@ -123,6 +123,7 @@ const Signup = () => {
   };
 
   return (
+ 
     <div className="register-container">
       <form className="register-form" onSubmit={handleSubmit}>
         <h2>Register</h2>
@@ -172,8 +173,10 @@ const Signup = () => {
         <input type="password" required onChange={handleChange} value={user.conpass} name="conpass" />
 
         <button type="submit">Register</button>
+      <p  className="signin-link"> Already have an account?<Link to ="/Login"> Sign in</Link></p>
       </form>
     </div>
+
   );
 };
 
