@@ -89,15 +89,32 @@ const BookNow = () => {
     const returnDateTime = new Date(bookingDetails.returnDate);
 
     // Handle booking dates validity
-    if (bookingDateTime < returnDateTime) {
+    if (bookingDateTime > returnDateTime) {
       setDates(true);
       return;
     }
-     
-    if(bookingDateTime < Date.now()){
+  
+
+    
+    
+    const today = new Date();
+    const formattedDate = `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}`;
+   // console.log(formattedDate);  // Output: "2024-11-07"
+    
+    const bookingDatest = `${bookingDateTime.getFullYear()}-${(bookingDateTime.getMonth() + 1).toString().padStart(2, '0')}-${bookingDateTime.getDate().toString().padStart(2, '0')}`;
+    const bookingDateend = `${returnDateTime.getFullYear()}-${(returnDateTime.getMonth() + 1).toString().padStart(2, '0')}-${returnDateTime.getDate().toString().padStart(2, '0')}`;
+    
+    console.log("booking start :" + bookingDatest);
+    console.log("booking end : "  + bookingDateend);
+    console.log(" Current data : " + formattedDate);
+
+  
+
+    if(bookingDatest < formattedDate ){
       setDates(true);
       return;
     }
+    
 
     // Redirect to payment page with booking details (without creating booking yet)
     navigate(`/payment`, {
