@@ -120,7 +120,7 @@ const AdminDashboard = () => {
       </div>
 
       <div className='booking-history1'>
-        <h2>Users Querise</h2>
+        <h2>Users Queries</h2>
         <button onClick={handleAllUserQuerise}>See Users Query History</button>     
       </div>
 

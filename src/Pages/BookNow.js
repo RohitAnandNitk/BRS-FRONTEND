@@ -22,7 +22,7 @@ const BookNow = () => {
   const [avai, setAvai] = useState(false); // handle availability of bicycle
 
   // Fetch the bicycle details
-  useEffect(() => {
+  useEffect(() => { 
     const fetchBicycle = async () => {
       console.log("Enter in fetch bicycle function : - ")
       try {
@@ -89,7 +89,7 @@ const BookNow = () => {
     const returnDateTime = new Date(bookingDetails.returnDate);
 
     // Handle booking dates validity
-    if (bookingDateTime > returnDateTime) {
+    if (bookingDateTime < returnDateTime) {
       setDates(true);
       return;
     }
