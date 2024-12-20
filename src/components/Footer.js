@@ -19,7 +19,7 @@ const  Footer = () => {
           <h1>ABOUT</h1> 
            
            <p><Link to ="https://www.linkedin.com/in/ra157/" className='link'>Rohit</Link></p>
-            <p>By MCA'26 Batch NITK</p>
+            <p>From MCA'26 Batch NITK</p>
        </div>
        
     </div>
