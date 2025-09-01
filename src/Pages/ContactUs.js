@@ -119,11 +119,11 @@ function ContactUs() {
         <div className="contact-info">
           <h3>Contact Information</h3>
           <div className="info-item">
-            <p><strong>Phone:</strong> 6202908328</p>
+            <p><strong>Phone:</strong>9691782915</p>
           </div>
 
           <div className="info-item">
-            <p><strong>Email:</strong> sharmarohit64748@gmail.com</p>
+            <p><strong>Email:</strong> piyushpatel23814@gmail.com</p>
           </div>
 
           <div className="info-item">
